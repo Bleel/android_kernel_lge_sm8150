@@ -34,6 +34,23 @@
 #include "../lge/factory/lge_factory.h"
 
 extern int lge_get_mfts_mode(void);
+
+#include <linux/pm_wakeup.h>
+#include <linux/project_info.h>
+#include <linux/msm_drm_notify.h>
+#include <linux/notifier.h>
+#include <linux/string.h>
+#include <linux/input.h>
+#include <linux/proc_fs.h>
+#include "dsi_drm.h"
+#include "dsi_display.h"
+#include "sde_crtc.h"
+#include "sde_rm.h"
+#include "sde_trace.h"
+#endif
+
+#ifdef CONFIG_KLAPSE
+#include "../sde/klapse.h"
 #endif
 
 /**
@@ -740,6 +757,10 @@ int dsi_panel_set_backlight(struct dsi_panel *panel, u32 bl_lvl)
 		pr_err("Backlight type(%d) not supported\n", bl->type);
 		rc = -ENOTSUPP;
 	}
+	
+#ifdef CONFIG_KLAPSE
+	set_rgb_slider(bl_lvl);
+#endif
 
 	return rc;
 }
