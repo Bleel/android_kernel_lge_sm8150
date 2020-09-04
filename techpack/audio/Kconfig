@@ -82,6 +82,7 @@ config SND_LGE_VOC_MUTE_DET
 	tristate "SND_LGE_VOC_MUTE_DET"
 config SND_LGE_WDSP_SSR
 	tristate "SND_LGE_WDSP_SSR"
+<<<<<<< HEAD
 config SND_SOC_ANALOG_CDC
 	tristate "SND_SOC_ANALOG_CDC"
 config SND_SOC_AQT1000
