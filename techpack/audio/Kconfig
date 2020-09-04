@@ -82,7 +82,6 @@ config SND_LGE_VOC_MUTE_DET
 	tristate "SND_LGE_VOC_MUTE_DET"
 config SND_LGE_WDSP_SSR
 	tristate "SND_LGE_WDSP_SSR"
-<<<<<<< HEAD
 config SND_SOC_ANALOG_CDC
 	tristate "SND_SOC_ANALOG_CDC"
 config SND_SOC_AQT1000
@@ -109,6 +108,13 @@ config SND_SOC_LGE_ESS_DIGITAL_FILTER
 	tristate "SND_SOC_LGE_ESS_DIGITAL_FILTER"
 config SND_SOC_MACHINE_SDXPOORWILLS
 	tristate "SND_SOC_MACHINE_SDXPOORWILLS"
+config SND_SOC_ES9218P
+	tristate "ES9218P HiFi DAC and Headphone Amplifier"
+	depends on MACH_LGE
+	default y if SND_SOC_ALL_CODECS && I2C
+config SND_SOC_LGE_ESS_DIGITAL_FILTER
+	bool "LG Digital Filter for ESS DACs"
+	default y if SND_SOC_ES9218P
 config SND_SOC_MSM_HDMI_CODEC_RX
 	tristate "SND_SOC_MSM_HDMI_CODEC_RX"
 config SND_SOC_MSM_HOSTLESS_PCM
