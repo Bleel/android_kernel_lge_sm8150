@@ -228,10 +228,3 @@ config LGE_DD_TEMP_BRINGUP
 	bool "LGE_DD_TEMP_BRINGUP"
 	help
 	TEMP DD bringup feature.
-
-config KLAPSE
-    bool CONFIG_KLAPSE
-    depends on DRM_MSM
-    default n
-    help
-        A simple rgb dynamic lapsing module similar to LineageOS' livedisplay
