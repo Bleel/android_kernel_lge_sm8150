@@ -97,7 +97,6 @@ static const unsigned int extcon_mute_det[] = {
 
 static void lge_set_edev_name(struct wcd_mbhc *mbhc, int status)
 {
-#if defined(CONFIG_SND_SOC_ES9218P)
 	int advanced_threshold = -30;	// advanced type w/o DAC
 	int normal_threshold = 0;		// normal type w/o DAC
 	pr_debug("%s: enter\n", __func__);
